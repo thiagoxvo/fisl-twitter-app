@@ -1,0 +1,29 @@
+{
+  "name": "fisl-twitter-spike",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagoxvo/fisl-twitter-spike.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagoxvo/fisl-twitter-spike/issues"
+  },
+  "homepage": "https://github.com/thiagoxvo/fisl-twitter-spike",
+    "dependencies": {
+    "express": "^4.1.2",
+    "body-parser": "^1.1.2",
+    "errorhandler": "^1.0.1",
+    "method-override": "^1.0.0"
+  },
+  "bin": {
+    "simple-server": "./start.js"
+  }
+}
