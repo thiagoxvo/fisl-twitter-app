@@ -25,4 +25,5 @@
   height: 50px;
   position: absolute;
   background: blue;
+  border: 1px solid black;
 }
