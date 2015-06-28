@@ -1,18 +1,26 @@
 var matrixSize = 50; //3x3
 var pixelSize = 50; //50px
+var mappedMatrix = ['0-1','2-2', '3-1'];
+
+var paintSelectedPositions = function(){
+  mappedMatrix.forEach(function(item){
+    $("div[data-position='"+ item +"']").addClass('pixel-map');
+  });
+}
 
 var buildMatrix = function() {
   var tag = "";
   var $container = $('.pixel-container');
   for( var i = 0; i < matrixSize; i++) {
     var left = "left:" + (i * pixelSize) + "px;";
-    // tag = '<div class="pixel" style="'+ left +'""></div>';
     for( var j = 0; j < matrixSize; j++) {
       var top = "top:" + (j * pixelSize) + "px;";
-      tag = '<div class="pixel" style="'+ top + left +'""></div>';
+      var position = i + "-" + j;
+      tag = '<div class="pixel" data-position="'+ position + '"" style="'+ top + left +'""></div>';
       $container.append(tag);   
     }
-  }  
+  }
+  paintSelectedPositions();    
 };
 buildMatrix();
 
@@ -30,15 +38,20 @@ var getLoadedImage = function(){
   return $('.preload img').detach();
 }
 
+var randomPosition = function(){
+  var position = Math.floor(Math.random()*items.length);
+  return mappedMatrix[position];
+}
+
 // setInterval(function(){
-  var position = Math.floor(Math.random() * matrixSize) + 1
-  console.log(position);
-  var img = getLoadedImage();
+//   var position = Math.floor(Math.random() * matrixSize) + 1
+//   console.log(position);
+//   var img = getLoadedImage();
   
-  loadHiddenImage(buildImageTag());
+//   loadHiddenImage(buildImageTag());
   
-  img.addClass('animated zoomIn');
-  $('td[data-position="'+ position +'"]')
-    .empty()
-    .html(img);
+//   img.addClass('animated zoomIn');
+//   $('td[data-position="'+ position +'"]')
+//     .empty()
+//     .html(img);
 // },1000);
