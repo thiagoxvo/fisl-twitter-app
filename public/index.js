@@ -43,6 +43,12 @@ var randomPosition = function(){
   return mappedMatrix[position];
 }
 
+$('.full-screen').click(function(){
+  if (screenfull.enabled) {
+      screenfull.request();
+  }
+});
+
 // setInterval(function(){
 //   var position = Math.floor(Math.random() * matrixSize) + 1
 //   console.log(position);

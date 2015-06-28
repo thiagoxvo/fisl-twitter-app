@@ -31,3 +31,9 @@
 .pixel-map {
   background: yellow;
 }
+
+.full-screen {
+  text-align: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
