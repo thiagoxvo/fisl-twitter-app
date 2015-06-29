@@ -1,6 +1,7 @@
 var matrixSize = 50; //3x3
-var pixelSize = 50; //50px
-var mappedMatrix = ['0-1','2-2', '3-1'];
+var pixelSize = 24; //50px
+var mappedMatrix = ['0-1','2-2', '3-1', '4-2'];
+var selectedPositions = [];
 
 var paintSelectedPositions = function(){
   mappedMatrix.forEach(function(item){
@@ -39,7 +40,7 @@ var getLoadedImage = function(){
 }
 
 var randomPosition = function(){
-  var position = Math.floor(Math.random()*items.length);
+  var position = Math.floor(Math.random() * mappedMatrix.length);
   return mappedMatrix[position];
 }
 
@@ -49,15 +50,24 @@ $('.full-screen').click(function(){
   }
 });
 
-// setInterval(function(){
-//   var position = Math.floor(Math.random() * matrixSize) + 1
-//   console.log(position);
-//   var img = getLoadedImage();
+$('.pixel').click(function(){
+  var element = $(this);
+  var position = element.data('position');
+  console.log(position);
+  selectedPositions.push(position);
+  element.addClass('pixel-map');
+  console.log(selectedPositions);
+});
+
+setInterval(function(){
+  var position = randomPosition();
+  console.log(position);
+  var img = getLoadedImage();
   
-//   loadHiddenImage(buildImageTag());
+  loadHiddenImage(buildImageTag());
   
-//   img.addClass('animated zoomIn');
-//   $('td[data-position="'+ position +'"]')
-//     .empty()
-//     .html(img);
-// },1000);
+  img.addClass('animated zoomIn');
+  $('div[data-position="'+ position +'"]')
+    .empty()
+    .html(img);
+},1000);
