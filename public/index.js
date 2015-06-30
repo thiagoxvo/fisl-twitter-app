@@ -65,9 +65,14 @@ var randomPosition = function(){
   return mappedMatrix[position];
 }
 
+//Full screen
+document.addEventListener(screenfull.raw.fullscreenchange, function () {
+  $('.full-screen').toggle(!screenfull.isFullscreen);
+});
+
 $('.full-screen').click(function(){
   if (screenfull.enabled) {
-      screenfull.request();
+    screenfull.request();
   }
 });
 
