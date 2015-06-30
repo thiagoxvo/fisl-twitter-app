@@ -1,3 +1,4 @@
+var twitter = require("./twitter-client");
 var express = require("express"),
     app = express(),
     bodyParser = require('body-parser'),
@@ -9,6 +10,12 @@ var express = require("express"),
 
 app.get("/", function (req, res) {
   res.redirect("/index.html");
+});
+
+app.get("/tweets", function(req, res){
+  twitter.searchHashtag(function(data){
+    console.log(data);
+  });
 });
 
 app.use(methodOverride());
