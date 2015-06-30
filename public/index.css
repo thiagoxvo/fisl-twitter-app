@@ -41,13 +41,13 @@ body { margin: 0; }
 
 .row {
   border-bottom: 1px solid #CCC;
-  height: 20px;
+  height: 24px;
 }
 
 .cell {
   border-left: 1px solid #CCC;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
 }
 
