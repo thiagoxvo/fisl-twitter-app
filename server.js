@@ -12,9 +12,9 @@ app.get("/", function (req, res) {
   res.redirect("/index.html");
 });
 
-app.get("/tweets", function(req, res){
+app.get("/images", function(req, res){
   twitter.searchHashtag(function(data){
-    console.log(data);
+    res.json({images:data});
   });
 });
 
