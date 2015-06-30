@@ -59,7 +59,7 @@ var getLoadedImage = function(){
 
 var randomPosition = function(){
   var position = Math.floor(Math.random() * continentsPositions.length);
-  return continentsPositions[position];
+  return continentsPositions.splice(position, 1)[0];
 }
 
 //Full screen
