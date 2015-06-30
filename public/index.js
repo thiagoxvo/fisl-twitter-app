@@ -2,25 +2,35 @@ var matrixSize = 50; //3x3
 var pixelSize = 50; //50px
 var mappedMatrix = ['0-1','2-2', '3-1'];
 
+var totalColumns = 53;
+var totalRows = 30;
+
 var paintSelectedPositions = function(){
   mappedMatrix.forEach(function(item){
-    $("div[data-position='"+ item +"']").addClass('pixel-map');
+    $("span[data-position='"+ item +"']").addClass('pixel-map');
   });
 }
 
-var buildMatrix = function() {
-  var tag = "";
+var appendCellsToRow = function (rowIndex) {
+  var $rowElement = $('<div class="row"></div>');
+
+  for (var columnIndex = 0; columnIndex < totalColumns; ++columnIndex) {
+    var dataPosition = rowIndex + '-' + columnIndex;
+    $rowElement.append('<span class="cell" data-position="' + dataPosition + '"></span>');
+  };
+
+  return $rowElement;
+};
+
+var buildMatrix = function () {
   var $container = $('.pixel-container');
-  for( var i = 0; i < matrixSize; i++) {
-    var left = "left:" + (i * pixelSize) + "px;";
-    for( var j = 0; j < matrixSize; j++) {
-      var top = "top:" + (j * pixelSize) + "px;";
-      var position = i + "-" + j;
-      tag = '<div class="pixel" data-position="'+ position + '"" style="'+ top + left +'""></div>';
-      $container.append(tag);   
-    }
-  }
-  paintSelectedPositions();    
+  var cell = "";
+
+  for (var rowIndex = 0; rowIndex < totalRows; ++rowIndex) {
+    var rowElement = appendCellsToRow(rowIndex);
+    $container.append(rowElement);
+  };
+  paintSelectedPositions();
 };
 buildMatrix();
 
@@ -53,9 +63,9 @@ $('.full-screen').click(function(){
 //   var position = Math.floor(Math.random() * matrixSize) + 1
 //   console.log(position);
 //   var img = getLoadedImage();
-  
+
 //   loadHiddenImage(buildImageTag());
-  
+
 //   img.addClass('animated zoomIn');
 //   $('td[data-position="'+ position +'"]')
 //     .empty()
