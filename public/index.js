@@ -87,16 +87,17 @@ $('.pixel').click(function(){
 
 var images = [];
 
-// setInterval(function() {
+setInterval(function() {
   $.ajax({
     type: 'GET',
     contentType: 'application/json',
     url: 'http://localhost:4567/images',
     success: function(data){
       images = images.concat(data.images);
+      console.log(images);
     }
   });
-// }, 6000 );
+}, 6000 );
 
 
 

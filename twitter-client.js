@@ -13,11 +13,15 @@ var error = function (err, response, body) {
   console.log('ERROR [%s]', err);
 };
 
+var getMiniImage = function(imageName) {
+  return imageName.replace("_normal", "_mini");
+}
+
 var searchHashtag = function(callback){
   twitter.getSearch({'q':'#copaamerica2015','count': 20}, error, function(data){
     var tweets = JSON.parse(data)["statuses"];
     var images = tweets.map(function(item) {
-      return item["user"].profile_image_url; 
+      return getMiniImage(item["user"].profile_image_url); 
     });
     callback.call(this, images);
   });
