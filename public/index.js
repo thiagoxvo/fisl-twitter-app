@@ -80,6 +80,23 @@ $('.pixel').click(function(){
   console.log(selectedPositions);
 });
 
+$('#select_link').click(function(e){
+    e.preventDefault();
+    //TODO: Get response
+    $.ajax({
+        type: 'GET',
+        contentType: 'application/json',
+        url: 'http://localhost:4567/tweets',
+        success: function(data) {
+        console.log('success');
+        console.log(JSON.stringify(data));
+        }
+    }).done(function(data) {
+        console.log('success');
+        console.log(JSON.stringify(data));
+    };
+});
+
 setInterval(function(){
   var position = randomPosition();
   console.log(position);
