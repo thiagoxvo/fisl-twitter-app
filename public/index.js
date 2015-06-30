@@ -85,33 +85,31 @@ $('.pixel').click(function(){
   console.log(selectedPositions);
 });
 
-$('#select_link').click(function(e){
-    e.preventDefault();
-    //TODO: Get response
-    $.ajax({
-        type: 'GET',
-        contentType: 'application/json',
-        url: 'http://localhost:4567/tweets',
-        success: function(data) {
-        console.log('success');
-        console.log(JSON.stringify(data));
-        }
-    }).done(function(data) {
-        console.log('success');
-        console.log(JSON.stringify(data));
-    };
-});
+var images = [];
+
+// setInterval(function() {
+  $.ajax({
+    type: 'GET',
+    contentType: 'application/json',
+    url: 'http://localhost:4567/images',
+    success: function(data){
+      images = images.concat(data.images);
+    }
+  });
+// }, 6000 );
+
+
 
 setInterval(function(){
-  var position = randomPosition();
-  console.log(position);
-  var img = getLoadedImage();
+  // var position = randomPosition();
+  // console.log(position);
+  // var img = getLoadedImage();
   
-  loadHiddenImage(buildImageTag());
+  // loadHiddenImage(buildImageTag());
   
-  img.addClass('animated zoomIn');
-  $('div[data-position="'+ position +'"]')
-    .empty()
-    .html(img);
+  // img.addClass('animated zoomIn');
+  // $('div[data-position="'+ position +'"]')
+  //   .empty()
+  //   .html(img);
 },1000);
 
