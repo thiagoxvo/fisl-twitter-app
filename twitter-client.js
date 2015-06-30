@@ -18,7 +18,7 @@ var getMiniImage = function(imageName) {
 }
 
 var searchHashtag = function(callback){
-  twitter.getSearch({'q':'#copaamerica2015','count': 20}, error, function(data){
+  twitter.getSearch({'q':'#copaamerica2015','count': 100}, error, function(data){
     var tweets = JSON.parse(data)["statuses"];
     var images = tweets.map(function(item) {
       return getMiniImage(item["user"].profile_image_url); 
