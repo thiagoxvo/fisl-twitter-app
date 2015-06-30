@@ -2,7 +2,7 @@ body { margin: 0; }
 
 .tg {
   border-collapse: collapse;
-  border-spacing:0; 
+  border-spacing:0;
   margin: 0 auto;
 }
 .tg td {
@@ -19,14 +19,13 @@ body { margin: 0; }
 }
 
 .pixel-container {
-  position: relative;
+  border: 1px solid #CCC;
 }
 
 .pixel {
   width: 50px;
   height: 50px;
   position: absolute;
-  background: blue;
   border: 1px solid black;
 }
 
@@ -38,4 +37,24 @@ body { margin: 0; }
   text-align: center;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.row {
+  border-bottom: 1px solid #CCC;
+  height: 20px;
+}
+
+.cell {
+  border-left: 1px solid #CCC;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.ocean {
+  background: #80bcc2;
+}
+
+.continent {
+  background: #fce05d;
 }
