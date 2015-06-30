@@ -50,3 +50,7 @@ body { margin: 0; }
   height: 20px;
   display: inline-block;
 }
+
+.ocean {
+  background: blue;
+}
