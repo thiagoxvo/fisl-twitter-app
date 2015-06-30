@@ -90,14 +90,18 @@ var getImages = function(){
 }
 getImages();
 setInterval(getImages, 60000 );
-setInterval(function(){
-  var position = randomPosition();
-  var img = getLoadedImage();
-  
-  loadHiddenImage(buildImageTag());
-  
-  img.addClass('animated zoomIn');
-  $('span[data-position="'+ position +'"]')
-    .empty()
-    .html(img);
-},1000);
+
+//Create a small delay to render first images
+setTimeout(function(){
+  setInterval(function(){
+    var position = randomPosition();
+    var img = getLoadedImage();
+    
+    loadHiddenImage(buildImageTag());
+    
+    img.addClass('animated zoomIn');
+    $('span[data-position="'+ position +'"]')
+      .empty()
+      .html(img);
+  },1000);
+}, 5000)
