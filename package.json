@@ -1,5 +1,5 @@
 {
-  "name": "fisl-twitter-spike",
+  "name": "fisl-twitter-app",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -9,19 +9,21 @@
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thiagoxvo/fisl-twitter-spike.git"
+    "url": "https://github.com/thiagoxvo/fisl-twitter-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thiagoxvo/fisl-twitter-spike/issues"
+    "url": "https://github.com/thiagoxvo/fisl-twitter-app/issues"
   },
-  "homepage": "https://github.com/thiagoxvo/fisl-twitter-spike",
-    "dependencies": {
-    "express": "^4.1.2",
+  "homepage": "https://github.com/thiagoxvo/fisl-twitter-app",
+  "dependencies": {
     "body-parser": "^1.1.2",
     "errorhandler": "^1.0.1",
-    "method-override": "^1.0.0"
+    "express": "^4.1.2",
+    "method-override": "^1.0.0",
+    "request": "^2.47.0",
+    "twitter-node-client": "0.0.6"
   },
   "bin": {
     "simple-server": "./start.js"
