@@ -84,7 +84,6 @@ var getImages = function(){
     contentType: 'application/json',
     url: 'http://localhost:4567/images',
     success: function(data){
-      console.log(data);
       images = images.concat(data.images);
     }
   });
