@@ -52,5 +52,9 @@ body { margin: 0; }
 }
 
 .ocean {
-  background: blue;
+  background: #80bcc2;
+}
+
+.continent {
+  background: #fce05d;
 }
