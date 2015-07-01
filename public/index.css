@@ -58,3 +58,11 @@ body { margin: 0; }
 .continent {
   background: #fce05d;
 }
+
+.earth {
+  -webkit-filter: sepia(1) hue-rotate(15deg) saturate(3);
+}
+
+.water {
+  -webkit-filter: sepia(1) hue-rotate(140deg) saturate(1);
+}
