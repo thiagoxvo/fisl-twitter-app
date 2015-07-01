@@ -64,9 +64,11 @@ img {
 }
 
 .earth {
+  border-radius: 5px;
   -webkit-filter: sepia(1) hue-rotate(15deg) saturate(3);
 }
 
 .water {
+  border-radius: 5px;
   -webkit-filter: sepia(1) hue-rotate(140deg) saturate(1);
 }
