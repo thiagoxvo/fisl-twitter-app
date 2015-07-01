@@ -44,7 +44,10 @@ var buildMatrix = function () {
 };
 buildMatrix();
 
-var buildImageTag = function(){
+var buildImageTag = function() {
+  if images.length === 0 {
+    return null;
+  }
   var position = Math.floor(Math.random() * images.length);
   var imgUrl = images.splice(position, 1)[0];
   return '<img src="'+ imgUrl +'">';
@@ -98,19 +101,20 @@ var getImages = function(){
   });
 }
 getImages();
-setInterval(getImages, 60000 );
+setInterval(getImages, 30000 );
 
 //Create a small delay to render first images
 setTimeout(function(){
   setInterval(function(){
     var position = randomPosition();
-    var img = getLoadedImage();
-    
-    loadHiddenImage(buildImageTag());
-    
-    img.addClass('animated zoomIn');
-    $('span[data-position="'+ position +'"]')
-      .empty()
-      .html(img);
-  },500)
+    var image = getLoadedImage();
+    if(image !== null) {
+      loadHiddenImage(buildImageTag());
+      
+      image.addClass('animated zoomIn');
+      $('span[data-position="'+ position +'"]')
+        .empty()
+        .html(image);
+      },500);
+    }
 }, 5000);
