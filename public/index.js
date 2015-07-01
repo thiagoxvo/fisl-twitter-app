@@ -64,18 +64,22 @@ var getLoadedImage = function(){
 
 var randomPosition = function(){
   if(availablePositions.length !== 0) {
-    var position = Math.floor(Math.random() * availablePositions.length);
+    var position = generateRandomNumber(availablePositions);
     return availablePositions.splice(position, 1)
   } else if(lastRendered === 'ocean'){
     lastRendered = 'continent';
-    var position = Math.floor(Math.random() * continentsPositions.length);
+    var position = generateRandomNumber(continentsPositions);
     return continentsPositions[position];
   } else {
     lastRendered = 'ocean';
-    var position = Math.floor(Math.random() * oceanPositions.length);
+    var position = generateRandomNumber(oceanPositions);
     return oceanPositions[position];
   }
 };
+
+var generateRandomNumber = function(array){
+  return Math.floor(Math.random() * array.length);
+}
 
 //Full screen
 document.addEventListener(screenfull.raw.fullscreenchange, function () {
