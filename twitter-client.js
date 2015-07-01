@@ -1,10 +1,10 @@
 var Twitter = require('twitter-node-client').Twitter;
 
 var config = {
-    "consumerKey": "",
-    "consumerSecret": "",
-    "accessToken": "",
-    "accessTokenSecret": ""
+  consumerKey: process.env.CONSUMER_KEY || 'consumer_key',
+  consumerSecret: process.env.CONSUMER_SECRET || 'consumer_secret',
+  accessToken: process.env.TOKEN || 'token',
+  accessTokenSecret: process.env.TOKEN_SECRET || 'token_secret'
 }
 
 var twitter = new Twitter(config);
