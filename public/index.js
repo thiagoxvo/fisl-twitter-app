@@ -5,6 +5,7 @@ var continentsPositions = ['3-22', '3-31', '4-20', '4-24', '5-23', '5-30', '5-31
 
 var totalColumns = 53;
 var totalRows = 30;
+var lastRendered = 'continent';
 
 var paintingTheOceans = function(){
   oceanPositions.forEach(function(item){
@@ -45,7 +46,7 @@ buildMatrix();
 
 var buildImageTag = function(){
   var position = Math.floor(Math.random() * images.length);
-  var imgUrl = images[position];
+  var imgUrl = images.splice(position, 1)[0];
   return '<img src="'+ imgUrl +'">';
 }
 
@@ -58,8 +59,15 @@ var getLoadedImage = function(){
 }
 
 var randomPosition = function(){
-  var position = Math.floor(Math.random() * continentsPositions.length);
-  return continentsPositions.splice(position, 1)[0];
+  if(lastRendered === 'ocean'){
+    lastRendered = 'continent';
+     var position = Math.floor(Math.random() * continentsPositions.length);  
+    return continentsPositions[position];
+  } else {
+    lastRendered = 'ocean';
+    var position = Math.floor(Math.random() * oceanPositions.length);
+    return oceanPositions[position];
+  }
 }
 
 //Full screen
@@ -85,6 +93,7 @@ var getImages = function(){
     url: 'http://localhost:4567/images',
     success: function(data){
       images = images.concat(data.images);
+      console.log(images.length);
     }
   });
 }
@@ -103,5 +112,5 @@ setTimeout(function(){
     $('span[data-position="'+ position +'"]')
       .empty()
       .html(img);
-  },1000);
-}, 5000)
+  },500)
+}, 5000);
