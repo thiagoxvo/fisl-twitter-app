@@ -120,4 +120,4 @@ setTimeout(function(){
       .html(image);
     }
   } ,500);
-}, 1000);
+}, 5000);
