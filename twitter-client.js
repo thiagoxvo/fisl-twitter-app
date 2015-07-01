@@ -22,6 +22,8 @@ var searchHashtag = function(callback){
     var tweets = JSON.parse(data)["statuses"];
     var images = tweets.map(function(item) {
       return getMiniImage(item["user"].profile_image_url); 
+    }).filter(function(value, index, self){
+      return self.indexOf(value) === index;
     });
     callback.call(this, images);
   });
