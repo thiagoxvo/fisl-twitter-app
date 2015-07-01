@@ -99,7 +99,7 @@ setTimeout(function(){
     
     loadHiddenImage(buildImageTag());
     
-    img.addClass('animated zoomIn earth');
+    img.addClass('animated zoomIn');
     $('span[data-position="'+ position +'"]')
       .empty()
       .html(img);
