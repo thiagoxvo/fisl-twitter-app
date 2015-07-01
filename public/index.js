@@ -45,7 +45,7 @@ var buildMatrix = function () {
 buildMatrix();
 
 var buildImageTag = function() {
-  if images.length === 0 {
+  if(images.length === 0){
     return null;
   }
   var position = Math.floor(Math.random() * images.length);
@@ -115,6 +115,6 @@ setTimeout(function(){
       $('span[data-position="'+ position +'"]')
         .empty()
         .html(image);
-      },500);
-    }
+    }  
+  } ,500);
 }, 5000);
