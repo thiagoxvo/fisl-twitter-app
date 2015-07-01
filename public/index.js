@@ -108,7 +108,7 @@ var getImages = function(){
   });
 }
 getImages();
-setInterval(getImages, 30000 );
+setInterval(getImages, 60000 );
 
 //Create a small delay to render first images
 setTimeout(function(){
@@ -123,5 +123,5 @@ setTimeout(function(){
       .empty()
       .html(image);
     }
-  } ,500);
+  } ,1000);
 }, 5000);
