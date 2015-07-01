@@ -1,5 +1,10 @@
 body { margin: 0; }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 .tg {
   border-collapse: collapse;
   border-spacing:0;
@@ -40,12 +45,11 @@ body { margin: 0; }
 }
 
 .row {
-  border-bottom: 1px solid #CCC;
   height: 24px;
 }
 
 .cell {
-  border-left: 1px solid #CCC;
+  border-radius: 5px;
   width: 24px;
   height: 24px;
   display: inline-block;
