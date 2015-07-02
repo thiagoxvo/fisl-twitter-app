@@ -6,18 +6,17 @@ var config = {
   accessToken: process.env.TOKEN || 'token',
   accessTokenSecret: process.env.TOKEN_SECRET || 'token_secret'
 }
-var hashtag = process.argv[2] || '#fisl';
 var twitter = new Twitter(config);
 
 var error = function (err, response, body) {
-  console.log('ERROR [%s]', err);
+  console.log(err);
 };
 
 var getMiniImage = function(imageName) {
   return imageName.replace("_normal", "_mini");
 }
 
-var searchHashtag = function(callback) {
+var searchHashtag = function(hashtag, callback) {
   twitter.getSearch({'q': hashtag,'count': 100}, error, function(data){
     var tweets = JSON.parse(data)["statuses"];
     var images = tweets.map(function(item) {
@@ -25,7 +24,7 @@ var searchHashtag = function(callback) {
     }).filter(function(value, index, self){
       return self.indexOf(value) === index;
     });
-    callback.call(this, images);
+    callback.call(this, { hashtag: hashtag, images: images });
   });
 }
 
