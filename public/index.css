@@ -5,6 +5,18 @@ img {
   height: 100%;
 }
 
+.world-container {
+  margin-left: -300px;
+  margin-right: -300px;
+  width: 1908px;
+  float: left;
+}
+
+.timeline-container {
+  width: 520px;
+  float: right;
+}
+
 .tg {
   border-collapse: collapse;
   border-spacing:0;
@@ -30,13 +42,13 @@ img {
 }
 
 .row {
-  height: 24px;
+  height: 36px;
 }
 
 .cell {
   border-radius: 5px;
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   display: inline-block;
 }
 
