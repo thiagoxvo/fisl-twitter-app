@@ -101,7 +101,8 @@ var getImages = function(){
   $.ajax({
     type: 'GET',
     contentType: 'application/json',
-    url: 'http://localhost:4567/images',
+    // url: 'http://localhost:4567/images',
+    url: 'http://tw-fisl.herokuapp.com/images'
     success: function(data){
       images = images.concat(data.images);
     }
