@@ -7,15 +7,18 @@ var express = require("express"),
     hostname = process.env.HOSTNAME || 'localhost',
     publicDir = process.argv[2] || __dirname + '/public';
 
+var hashtag = "#thoughtworks";
+
 app.set('port', (process.env.PORT || 4567));
 
 app.get("/", function (req, res) {
+  hashtag = "#" + req.query.hashtag;
   res.redirect("/index.html");
 });
 
 app.get("/images", function(req, res){
-  twitter.searchHashtag(function(data){
-    res.json({images:data});
+  twitter.searchHashtag(hashtag, function(data){
+    res.json(data);
   });
 });
 
