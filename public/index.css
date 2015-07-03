@@ -5,6 +5,31 @@ img {
   height: 100%;
 }
 
+.top-bar {
+  background-color: #80bcc2;
+  line-height: 78px;
+  height: 78px;
+
+  font-size: 36px;
+  color: white;
+  font-family: "Open Sans", "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.top-bar span {
+  text-align: center;
+  width: 520px;
+  float: right;
+}
+
+#tw-logo {
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  float: left;
+}
+
 .world-container {
   margin-left: -300px;
   margin-right: -300px;
