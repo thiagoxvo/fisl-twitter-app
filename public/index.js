@@ -115,10 +115,10 @@ setTimeout(function(){
       var position = randomPosition();
       var image = getLoadedImage();
       loadHiddenImage(buildImageTag());
-      image.addClass('animated zoomIn');
+      image.addClass('animated flipInY');
       $('span[data-position="'+ position +'"]')
       .empty()
       .html(image);
     }
-  } ,100);
+  }, 1000);
 }, 5000);
