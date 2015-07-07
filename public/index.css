@@ -40,6 +40,11 @@ img {
   float: left;
 }
 
+.pixel-container{
+  margin-bottom: -24px;
+  margin-top: -24px;
+}
+
 .github-link {
   text-align: center;
   font-size: 22px;
